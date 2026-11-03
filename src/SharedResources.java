@@ -25,6 +25,12 @@ public class SharedResources {
             patientsCount.release(); 
         }
 
+        public boolean isFull() {
+            synchronized (patients) {
+                return patients.size() >= capacity;
+            }
+        }
+
         public Patient takePatient() throws InterruptedException {
             patientsCount.acquire(); 
             
