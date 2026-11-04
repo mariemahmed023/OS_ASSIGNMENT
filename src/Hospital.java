@@ -76,8 +76,8 @@ public class Hospital {
         int NOP = NOp.nextInt();
 
         System.out.print("Patients arriving:\n");
-        for (int i = 0; i < NOP; i++) {
-            System.out.print("P"+ i+1 + " ");
+        for (int i = 1; i <= NOP; i++) {
+            System.out.print("P"+ i + " ");
         }
         System.out.print("\n");
 
