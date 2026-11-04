@@ -4,17 +4,17 @@ public class DoctorTest {
     public static void main(String[] args) throws InterruptedException {
 
         SharedResources.WaitingRoom waitingRoom =
-                new SharedResources.WaitingRoom(3);
+                new SharedResources.WaitingRoom(1);
 
         SharedResources.TreatmentRoomManager treatmentRooms =
                 new SharedResources.TreatmentRoomManager(2);
 
-        Doctor doctor = new Doctor(1, waitingRoom, treatmentRooms);
+        Doctor doctor1 = new Doctor(1, waitingRoom, treatmentRooms);
 
         Patient patient1 = new Patient(1, waitingRoom);
         Patient patient2 = new Patient(2, waitingRoom);
 
-        doctor.start();
+        doctor1.start();
 
         patient1.start();
         patient2.start();
@@ -22,8 +22,10 @@ public class DoctorTest {
         patient1.join();
         patient2.join();
 
-        doctor.interrupt();
-        doctor.join();
+        doctor1.interrupt();
+        doctor1.join();
+
+
 
         System.out.println("TEST COMPLETED.");
     }
