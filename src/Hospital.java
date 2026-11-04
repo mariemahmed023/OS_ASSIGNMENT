@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
 public class Hospital {
-    private int WRcapacity;
-    private int doctorsN;
-    private int patientsN;
+    private final int WRcapacity;
+    private final int doctorsN;
+    private final int patientsN;
 
     public Hospital (int WRcapacity, int doctorsN, int patientsN) {
         this.WRcapacity = WRcapacity;
@@ -31,7 +31,7 @@ public class Hospital {
             patientsArray[i].start();
 
             try {
-                Thread.sleep(300);
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
@@ -60,7 +60,7 @@ public class Hospital {
 
     }
 
-    public static void main(String[] args) throws InterruptedException {
+     static void main() {
 
         Scanner WRc = new Scanner(System.in);
         Scanner NOp = new Scanner(System.in);
